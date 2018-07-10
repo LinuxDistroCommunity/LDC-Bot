@@ -7,7 +7,7 @@ import (
 
 var config Config
 
-//Config Config Struct
+//Config Struct
 type Config struct {
 	Irc struct {
 		Server    string   `json:"Server"`
@@ -19,6 +19,7 @@ type Config struct {
 	} `json:"irc"`
 }
 
+//ReadConfig Unmarchal the Config file with Viper
 func ReadConfig() Config {
 	err := viper.Unmarshal(&config)
 	if err != nil {

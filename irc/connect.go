@@ -8,6 +8,7 @@ import (
 	"github.com/thoj/go-ircevent"
 )
 
+//IrcConnect Connect to the IRC Network
 func IrcConnect(cnf config.Config) {
 	irccon := irc.IRC(cnf.Irc.Nick, cnf.Irc.Ident)
 	irccon.UseTLS = cnf.Irc.TLS
