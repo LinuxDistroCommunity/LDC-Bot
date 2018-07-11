@@ -1,10 +1,12 @@
 {
   "irc": {
-    "Server": "irc.freenode.net:7000",
+    "Server": "chat.freenode.net:6697",
     "Nick": "LDC-BOT-DEV",
     "Ident": "LDC-BOT-DEV",
     "TLS": true,
     "SkipVerif": true,
-    "Channels": ["#linuxdistrocommunity"]
+    "Channels": [
+      "#linuxdistrocommunity_dev"
+    ]
   }
 }

@@ -9,7 +9,7 @@ import (
 )
 
 //IrcConnect Connect to the IRC Network
-func IrcConnect(cnf config.Config) {
+func IrcConnect(cnf config.Config) *irc.Connection {
 	irccon := irc.IRC(cnf.Irc.Nick, cnf.Irc.Ident)
 	irccon.UseTLS = cnf.Irc.TLS
 	irccon.TLSConfig = &tls.Config{InsecureSkipVerify: cnf.Irc.SkipVerif}
@@ -21,6 +21,8 @@ func IrcConnect(cnf config.Config) {
 	 irccon.AddCallback("366", func(e *irc.Event) { })
 	*/
 
+	LogIrcToConsole(irccon)
+
 	err := irccon.Connect(cnf.Irc.Server)
 	if err != nil {
 		logrus.WithFields(logrus.Fields{
@@ -28,5 +30,6 @@ func IrcConnect(cnf config.Config) {
 			"Error":  err,
 		}).Fatal("IrcConnect()")
 	}
-	irccon.Loop()
+
+	return irccon
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/LinuxDistroCommunity/LDC-Bot/config"
+	"github.com/LinuxDistroCommunity/LDC-Bot/irc"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )
@@ -27,5 +28,10 @@ func init() {
 }
 
 func main() {
+	// lets see if the bot actually starts lol
+	irc := irc.IrcConnect(cnf)
 
+	//All Code should be Implimented before this guy here this holds the main thread open
+	irc.Join(cnf.Irc.Channels[0])
+	irc.Loop()
 }
