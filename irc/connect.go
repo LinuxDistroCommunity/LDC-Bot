@@ -22,6 +22,7 @@ func IrcConnect(cnf config.Config) *irc.Connection {
 	*/
 
 	LogIrcToConsole(irccon)
+	IrcCommandCallback(irccon, cnf)
 
 	err := irccon.Connect(cnf.Irc.Server)
 	if err != nil {

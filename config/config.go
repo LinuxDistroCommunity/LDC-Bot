@@ -16,6 +16,7 @@ type Config struct {
 		TLS       bool     `json:"TLS"`
 		SkipVerif bool     `json:"SkipVerif"`
 		Channels  []string `json:"Channels"`
+		Prefix    string   `json:"Prefix"`
 	} `json:"irc"`
 }
 
