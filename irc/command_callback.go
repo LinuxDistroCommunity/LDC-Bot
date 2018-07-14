@@ -7,11 +7,13 @@ import (
 	"github.com/thoj/go-ircevent"
 )
 
+// Command Here we are creating the Command struct that holds our mesaage string
 type Command struct {
+	// here we set the struct value
 	Message string
 }
 
-//LogIrcToConsole Log IRC Output to console
+// IrcCommandCallback takes the input of the IRC channel and splits the string to find if there is any commands in the message
 func IrcCommandCallback(ircobj *irc.Connection, cnf config.Config) {
 	ircobj.AddCallback("PRIVMSG", func(event *irc.Event) {
 		go func(event *irc.Event) {
