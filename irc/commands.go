@@ -12,6 +12,8 @@ func IrcCommands(cmd string, e *irc.Event, cnf config.Config) string {
 	switch c := cmd; c {
 	case fmt.Sprintf("%shello", cnf.Irc.Prefix):
 		return functions.Hello(e)
+	case fmt.Sprintf("%sback", cnf.Irc.Prefix):
+		return functions.Back(e)
 	default:
 		return fmt.Sprintf("%s Command Not Found", c)
 	}
