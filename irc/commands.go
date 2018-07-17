@@ -8,6 +8,7 @@ import (
 	"github.com/thoj/go-ircevent"
 )
 
+// IrcCommands Implements the commands that LDC-BOT is listening to in the channel
 func IrcCommands(cmd string, e *irc.Event, cnf config.Config) string {
 	switch c := cmd; c {
 	case fmt.Sprintf("%shello", cnf.Irc.Prefix):
