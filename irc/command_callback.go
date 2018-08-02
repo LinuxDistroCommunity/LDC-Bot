@@ -7,7 +7,7 @@ import (
 	"github.com/thoj/go-ircevent"
 )
 
-// Command Here we are creating the Command struct that holds our mesaage string
+// Command Here we are creating the Command struct that holds our message string
 type Command struct {
 	// here we set the struct value
 	Message string
